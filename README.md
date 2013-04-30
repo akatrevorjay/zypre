@@ -1,3 +1,12 @@
+zypre (fork)
+============
+
+A forked zypre I was playing with for another project of mine.
+I did away with gevent as it's buggy and opted for IOLoop instead.
+Also added more callbacks.
+
+~trevorj 041013
+
 zypre
 =====
 
