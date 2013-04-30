@@ -138,7 +138,7 @@ class Beacon(object):
             return self.loop.start()
 
     def _recv_beacon(self, fd, events):
-        """Greenlet that received udp beacons
+        """Receives udp beacons
         """
         while True:
             try:
@@ -183,7 +183,7 @@ class Beacon(object):
                                peer_port, peer_socket_type)
 
     def _send_beacon(self):
-        """Greenlet that sends udp beacons at intervals.
+        """Sends udp beacons at intervals.
         """
         beacon = beaconv2.pack(
             'ZRE', 2, self.me,
@@ -218,14 +218,14 @@ class Beacon(object):
                 del self.peers[peer_id]
 
     def _recv_peer(self, msg):
-        """Greenlet that receives messages from the local ROUTER
+        """Receives messages from the local ROUTER
         socket.
         """
         log.debug('recv_peer msg=%s', msg)
         return self.handle_recv_msg(*msg)
 
     def _recv_router(self, msg):
-        """Greenlet that receives messages from the local ROUTER
+        """Receives messages from the local ROUTER
         socket.
         """
         #log.debug('recv_router msg=%s', msg)
